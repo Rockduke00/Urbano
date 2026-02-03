@@ -511,19 +511,10 @@
                 <div class="d-flex justify-content-center align-items-center mb-2 text-center gap-2">    
                     <h2 class="h5 mb-0 Encabe">RECIBO DE RESERVA</h2>
                 </div>
-                <div class="d-flex justify-content-center align-items-center gap-2 text-center">
-                    <h3 class="h7 mb-0 Encabe2">CASA NUMERO</h3>
+              <div class="d-flex justify-content-center align-items-center gap-2 text-center">
+                    <h3 class="h7 mb-0 Encabe2">CASA NÚMERO</h3>
                     <select id="ddlcasaNumero" class="form-select w-auto dropdown-custom-Casa">
                         <option value="">Seleccione</option>
-                        <option value="FF-01">FF-01</option>
-                        <option value="FF-02">FF-02</option>
-                        <option value="FF-15">FF-15</option>
-                        <option value="FF-30">FF-30</option>
-                        <option value="FF-47">FF-47</option>
-                        <option value="FF-48">FF-48</option>
-                        <option value="FF-55">FF-55</option>
-                        <option value="FF-64">FF-64</option>
-                        <option value="FF-65">FF-65</option>
                     </select>
                 </div>
                 <br />
@@ -952,6 +943,19 @@
             window.print();
         }
     </script>
+
+    <script>
+    const ddl = document.getElementById("ddlcasaNumero");
+
+    for (let i = 1; i <= 65; i++) {
+        const num = i.toString().padStart(2, '0');
+        const option = document.createElement("option");
+        option.value = `FF-${num}`;
+        option.textContent = `FF-${num}`;
+        ddl.appendChild(option);
+    }
+</script>
+    
 </body>
 </html>
 
